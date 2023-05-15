@@ -10,6 +10,14 @@ const currencyFormat = new Intl.NumberFormat('en-US', {
 });
 
 
+const dateFormat = new Intl.DateTimeFormat('en-US', { 
+  weekday: 'short',
+  month:'short',
+  day:'2-digit', 
+  year:'numeric',
+  timeZone: 'America/Chicago' 
+});
+
 function App() {
   const WINNING_NUMBERS = {
     megam: {
@@ -113,9 +121,10 @@ function App() {
             <div className="draw-info">
               {game.jackpot && <div className="jackpot">Current Jackpot: {currencyFormat.format(game.jackpot)}</div>}
               {game.cash && <div className="jackpot">Cash Value: {currencyFormat.format(game.cash)}</div>}
-              <div className="date">Draw Date: {game.drawdate}</div>
+              <div className="date">Draw Date: {dateFormat.format(new Date(game.drawdate))}</div>
+              {game.multiplier && <div className="multiplier">Multiplier: &times;{game.multiplier}</div>}
               <div className="next-draw">
-                {game.nextDraw.drawdate && <div className="date">Next Draw: {game.nextDraw.drawdate}</div>}
+                {game.nextDraw.drawdate && <div className="date">Next Draw: {dateFormat.format(new Date(game.nextDraw.drawdate))}</div>}
                 {game.nextDraw.jackpot && <div className="date">Next Jackpot: {currencyFormat.format(game.nextDraw.jackpot)}</div>}
                 {game.nextDraw.cash && <div className="date">Next Cash Value: {currencyFormat.format(game.nextDraw.cash)}</div>}
               </div>

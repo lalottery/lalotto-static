@@ -40,10 +40,11 @@ footer {
 	border-top: 0;
 }
 .game-logo {
-	margin-right: 2rem;
+	margin: 2rem 2rem 2rem 0;
 }
 .balls {
 	display: flex;
+	align-items: center;
 }
 .ball {
 	background-color: white;
@@ -75,6 +76,7 @@ footer {
     background-color: #35b7a3;
     color: white;
     font-weight: bold;
+	margin-top: 1rem;
 }
 
 @media (max-width: 46em) {
