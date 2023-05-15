@@ -1,0 +1,88 @@
+html,body,#sb-site{
+	font-size:12px;
+	line-height:1.2em;
+	font-family:'Trebuchet MS', Verdana, Helvetica, sans-serif;
+	-webkit-font-smoothing:antialiased !important;
+	background-color:#b4281b;
+	background-position: center center;
+	background-repeat: repeat;
+	background-image:url('/public/img/bg.png');
+}
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+header {
+	color: white;
+}
+footer {
+	text-align: center;
+	color: white;
+}
+.flex { display: flex; }
+.justify-center{justify-content: center;}
+.align-center {align-items: center;}
+
+.winning-numbers {
+    background: white;
+    padding: 2rem;
+	border-radius: 5px;
+}
+
+.game-row {
+	border-top: 1px solid #ccc;
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: 1fr 1fr;
+	padding: 2rem 0;
+}
+.game-row:first-child {
+	border-top: 0;
+}
+.game-logo {
+	margin-right: 2rem;
+}
+.balls {
+	display: flex;
+}
+.ball {
+	background-color: white;
+	border: 1px solid #333;
+	border-radius: 50%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14pt;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 75px;
+	height: 75px;
+    margin-right: 1rem;
+}
+.megam .balls .ball:last-child {
+	background-color: yellow;
+}
+.powerb .balls .ball:last-child {
+	background-color: red;
+	color: white;
+}
+.draw-info {
+	font-size: 15pt;
+    line-height: 1.5;
+}
+.next-draw {
+	padding: 1rem;
+    background-color: #35b7a3;
+    color: white;
+    font-weight: bold;
+}
+
+@media (max-width: 46em) {
+	.game-row {
+		grid-template-columns: 1fr;
+	}
+	.ball {
+		width: 30px;
+		height: 30px;
+	}
+}
